@@ -1,0 +1,302 @@
+{
+  "product": "product-1",
+  "scanned_at": "2026-09-11T14:25:00.039397+00:00",
+  "images": {
+    "Back.jpeg": {
+      "orientation": {
+        "selected": "0",
+        "degrees_clockwise": 0,
+        "scores": {
+          "0": 2179,
+          "90_CLOCKWISE": 1606,
+          "90_COUNTERCLOCKWISE": 1627,
+          "180": 906
+        }
+      },
+      "source_dimensions": {
+        "width": 720,
+        "height": 1280
+      },
+      "annotated_dimensions": {
+        "width": 720,
+        "height": 1280
+      },
+      "highlighted_image": "highlighted_Back.jpeg",
+      "fields": {
+        "MFG / PACKING DATE": {
+          "field": "MFG / PACKING DATE",
+          "value": "JUN/26",
+          "text": "| JUNI26 - FEBI27 = 9",
+          "confidence": 64.83,
+          "bounding_box": {
+            "x1": 29,
+            "y1": 443,
+            "x2": 639,
+            "y2": 529
+          },
+          "ocr": {
+            "variant": "red_channel",
+            "psm": 6,
+            "region": "full",
+            "reason": "date_pattern"
+          }
+        },
+        "USE BY / BEST BEFORE": {
+          "field": "USE BY / BEST BEFORE",
+          "value": "FEB/27",
+          "text": "| JUNI26 - FEBI27 = 9",
+          "confidence": 64.83,
+          "bounding_box": {
+            "x1": 29,
+            "y1": 443,
+            "x2": 639,
+            "y2": 529
+          },
+          "ocr": {
+            "variant": "red_channel",
+            "psm": 6,
+            "region": "full",
+            "reason": "date_range_pattern"
+          }
+        },
+        "LOT / BATCH": {
+          "field": "LOT / BATCH",
+          "value": "0454B1",
+          "text": "UIE oO RGU EL: { WIN La | 0454B1. SGames | 6153045481 {Gaee: 6155045481 a=. i",
+          "confidence": 38.16,
+          "bounding_box": {
+            "x1": 194,
+            "y1": 479,
+            "x2": 654,
+            "y2": 603
+          },
+          "ocr": {
+            "variant": "clahe",
+            "psm": 6,
+            "region": "top_panel",
+            "reason": "production_code_near_date"
+          }
+        }
+      }
+    },
+    "Front.jpeg": {
+      "orientation": {
+        "selected": "90_COUNTERCLOCKWISE",
+        "degrees_clockwise": 270,
+        "scores": {
+          "0": 4139,
+          "90_CLOCKWISE": 6383,
+          "90_COUNTERCLOCKWISE": 22445,
+          "180": 3334
+        }
+      },
+      "source_dimensions": {
+        "width": 720,
+        "height": 1280
+      },
+      "annotated_dimensions": {
+        "width": 1280,
+        "height": 720
+      },
+      "highlighted_image": "highlighted_Front.jpeg",
+      "fields": {
+        "MRP": {
+          "field": "MRP",
+          "value": "₹420",
+          "text": "ola Sepik Neaten Kuan 44504634/L10012128.001(0)/00 Aothes than naturally occurring trans fat MRP ¢ 420.00 (incl. of NET . all taxes) (¢ 0.83 pet g",
+          "confidence": 58.46,
+          "bounding_box": {
+            "x1": 179,
+            "y1": 405,
+            "x2": 995,
+            "y2": 585
+          },
+          "ocr": {
+            "variant": "clahe",
+            "psm": 11,
+            "region": "full",
+            "reason": "declaration_keyword"
+          }
+        },
+        "MFG / PACKING DATE": {
+          "field": "MFG / PACKING DATE",
+          "value": null,
+          "text": "g Aye ai a # formation: 0 oe pe NOILE CONSUMER — | € pre «fete © 70.0007 NEMO ea es ~ VECARCONNESTIECO | TA (Se Sie) = Be Pee : 7, P a % seer mmm mms °° Ovoer SRegsteed Tadenarkol NEST) \\ }900'103 1947 MFD.-USE BY-Lot ip : eS Ne i Bia MEU RTTI ~ ohe aig Pxkcaans Oss GEE SIDE PANEL",
+          "confidence": 32.18,
+          "bounding_box": {
+            "x1": 1,
+            "y1": 189,
+            "x2": 1279,
+            "y2": 424
+          },
+          "ocr": {
+            "variant": "clahe",
+            "psm": 6,
+            "region": "top_panel",
+            "reason": "declaration_keyword"
+          }
+        },
+        "USE BY / BEST BEFORE": {
+          "field": "USE BY / BEST BEFORE",
+          "value": null,
+          "text": "g Aye ai a # formation: 0 oe pe NOILE CONSUMER — | € pre «fete © 70.0007 NEMO ea es ~ VECARCONNESTIECO | TA (Se Sie) = Be Pee : 7, P a % seer mmm mms °° Ovoer SRegsteed Tadenarkol NEST) \\ }900'103 1947 MFD.-USE BY-Lot ip : eS Ne i Bia MEU RTTI ~ ohe aig Pxkcaans Oss GEE SIDE PANEL",
+          "confidence": 32.18,
+          "bounding_box": {
+            "x1": 1,
+            "y1": 189,
+            "x2": 1279,
+            "y2": 424
+          },
+          "ocr": {
+            "variant": "clahe",
+            "psm": 6,
+            "region": "top_panel",
+            "reason": "declaration_keyword"
+          }
+        },
+        "LOT / BATCH": {
+          "field": "LOT / BATCH",
+          "value": null,
+          "text": "g Aye ai a # formation: 0 oe pe NOILE CONSUMER — | € pre «fete © 70.0007 NEMO ea es ~ VECARCONNESTIECO | TA (Se Sie) = Be Pee : 7, P a % seer mmm mms °° Ovoer SRegsteed Tadenarkol NEST) \\ }900'103 1947 MFD.-USE BY-Lot ip : eS Ne i Bia MEU RTTI ~ ohe aig Pxkcaans Oss GEE SIDE PANEL",
+          "confidence": 32.18,
+          "bounding_box": {
+            "x1": 1,
+            "y1": 189,
+            "x2": 1279,
+            "y2": 424
+          },
+          "ocr": {
+            "variant": "clahe",
+            "psm": 6,
+            "region": "top_panel",
+            "reason": "declaration_keyword"
+          }
+        },
+        "LICENSE": {
+          "field": "LICENSE",
+          "value": "OOTOOOOOB",
+          "text": "| Jssai NSS OS Ge MM neieracerae “OEE ODE PANEL Lic No OOTOOOOOB To TIL saduming) [S74 | 118 a ee eee nell X A",
+          "confidence": 29.09,
+          "bounding_box": {
+            "x1": 39,
+            "y1": 350,
+            "x2": 1187,
+            "y2": 489
+          },
+          "ocr": {
+            "variant": "red_channel",
+            "psm": 6,
+            "region": "bottom_panel",
+            "reason": "declaration_keyword"
+          }
+        }
+      }
+    }
+  },
+  "fields": {
+    "MFG / PACKING DATE": {
+      "field": "MFG / PACKING DATE",
+      "value": "JUN/26",
+      "text": "| JUNI26 - FEBI27 = 9",
+      "confidence": 64.83,
+      "bounding_box": {
+        "x1": 29,
+        "y1": 443,
+        "x2": 639,
+        "y2": 529
+      },
+      "ocr": {
+        "variant": "red_channel",
+        "psm": 6,
+        "region": "full",
+        "reason": "date_pattern"
+      },
+      "source_image": "Back.jpeg"
+    },
+    "USE BY / BEST BEFORE": {
+      "field": "USE BY / BEST BEFORE",
+      "value": "FEB/27",
+      "text": "| JUNI26 - FEBI27 = 9",
+      "confidence": 64.83,
+      "bounding_box": {
+        "x1": 29,
+        "y1": 443,
+        "x2": 639,
+        "y2": 529
+      },
+      "ocr": {
+        "variant": "red_channel",
+        "psm": 6,
+        "region": "full",
+        "reason": "date_range_pattern"
+      },
+      "source_image": "Back.jpeg"
+    },
+    "LOT / BATCH": {
+      "field": "LOT / BATCH",
+      "value": "0454B1",
+      "text": "UIE oO RGU EL: { WIN La | 0454B1. SGames | 6153045481 {Gaee: 6155045481 a=. i",
+      "confidence": 38.16,
+      "bounding_box": {
+        "x1": 194,
+        "y1": 479,
+        "x2": 654,
+        "y2": 603
+      },
+      "ocr": {
+        "variant": "clahe",
+        "psm": 6,
+        "region": "top_panel",
+        "reason": "production_code_near_date"
+      },
+      "source_image": "Back.jpeg"
+    },
+    "MRP": {
+      "field": "MRP",
+      "value": "₹420",
+      "text": "ola Sepik Neaten Kuan 44504634/L10012128.001(0)/00 Aothes than naturally occurring trans fat MRP ¢ 420.00 (incl. of NET . all taxes) (¢ 0.83 pet g",
+      "confidence": 58.46,
+      "bounding_box": {
+        "x1": 179,
+        "y1": 405,
+        "x2": 995,
+        "y2": 585
+      },
+      "ocr": {
+        "variant": "clahe",
+        "psm": 11,
+        "region": "full",
+        "reason": "declaration_keyword"
+      },
+      "source_image": "Front.jpeg"
+    },
+    "LICENSE": {
+      "field": "LICENSE",
+      "value": "OOTOOOOOB",
+      "text": "| Jssai NSS OS Ge MM neieracerae “OEE ODE PANEL Lic No OOTOOOOOB To TIL saduming) [S74 | 118 a ee eee nell X A",
+      "confidence": 29.09,
+      "bounding_box": {
+        "x1": 39,
+        "y1": 350,
+        "x2": 1187,
+        "y2": 489
+      },
+      "ocr": {
+        "variant": "red_channel",
+        "psm": 6,
+        "region": "bottom_panel",
+        "reason": "declaration_keyword"
+      },
+      "source_image": "Front.jpeg"
+    }
+  },
+  "missing_fields": [
+    "COUNTRY OF ORIGIN",
+    "CUSTOMER CARE",
+    "INGREDIENTS",
+    "MANUFACTURER",
+    "MARKETED BY",
+    "MULTI UNIT PACKAGE",
+    "NET QUANTITY"
+  ]
+}
