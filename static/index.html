@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PackSight — Legal Metrology Compliance Scanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">PackSight <span class="badge-sih">SIH 2026</span></div>
+        <div class="brand-subtitle">Legal Metrology (Packaged Commodities) Compliance Engine</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="product-id-pill" id="next-id-pill" title="Auto-assigned sequential product ID for next physical product">
+        <span class="pill-dot"></span>
+        <span class="pill-label">Target ID:</span>
+        <strong id="next-id-text">PS-2026-0001</strong>
+      </div>
+      <button id="btn-quick-demo" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Test with Product 1
+      </button>
+      <button id="btn-toggle-history" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        History
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-layout">
+    <!-- Left Column: Scanning Studio -->
+    <section class="panel scanner-panel">
+      <div class="panel-tabs">
+        <button id="tab-btn-camera" class="panel-tab active" data-target="tab-camera">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+          Live Camera Mode
+        </button>
+        <button id="tab-btn-upload" class="panel-tab" data-target="tab-upload">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          Upload Package Images
+        </button>
+      </div>
+
+      <!-- Tab: Camera View -->
+      <div id="tab-camera" class="tab-content active">
+        <div class="camera-viewport-container">
+          <video id="camera-feed" autoplay playsinline muted></video>
+          <canvas id="camera-canvas" style="display:none;"></canvas>
+          
+          <!-- Camera HUD Overlay -->
+          <div class="camera-hud">
+            <div class="reticle-box">
+              <span class="corner tl"></span>
+              <span class="corner tr"></span>
+              <span class="corner bl"></span>
+              <span class="corner br"></span>
+              <div class="hud-center-cross"></div>
+              <div class="hud-guide-label">Align package panel inside boundary</div>
+            </div>
+          </div>
+
+          <!-- Real-Time Frame Quality Indicator Bar -->
+          <div id="quality-banner" class="quality-banner">
+            <div class="quality-pill" id="quality-sharpness">
+              <span class="indicator-dot"></span>
+              <span class="indicator-text">Sharpness: --</span>
+            </div>
+            <div class="quality-pill" id="quality-lighting">
+              <span class="indicator-dot"></span>
+              <span class="indicator-text">Lighting: --</span>
+            </div>
+            <div class="quality-pill" id="quality-glare">
+              <span class="indicator-dot"></span>
+              <span class="indicator-text">Glare: --</span>
+            </div>
+          </div>
+
+          <div id="camera-tip" class="camera-tip">
+            Click "Start Camera" to align and capture package faces
+          </div>
+        </div>
+
+        <div class="camera-controls">
+          <button id="btn-start-camera" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            Start Camera
+          </button>
+          <button id="btn-capture-frame" class="btn btn-accent" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+            Capture Frame
+          </button>
+          <button id="btn-add-another-side-cam" class="btn btn-secondary" style="display:none;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            + Add Another Side
+          </button>
+        </div>
+
+        <!-- Captured frames queue -->
+        <div class="captured-frames-section">
+          <div class="section-label-row">
+            <div class="section-label">Captured Angles (<span id="frame-count">0</span>):</div>
+            <span class="section-subhint">Capture all package sides for complete audit</span>
+          </div>
+          <div id="captured-frames-list" class="captured-frames-list">
+            <span class="empty-hint">No frames captured yet. Capture Front, Back, and Side faces for complete compliance.</span>
+          </div>
+          <button id="btn-scan-captured" class="btn btn-success full-width" disabled>
+            Analyze Captured Angles
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab: File Upload -->
+      <div id="tab-upload" class="tab-content">
+        <div id="drop-zone" class="drop-zone">
+          <input type="file" id="file-input" multiple accept="image/jpeg,image/png,image/webp" style="display:none;" />
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          <div class="drop-text">Drag & drop package images here, or <span class="browse-link">browse</span></div>
+          <div class="drop-subtext">Upload any number of package faces (Front, Back, Nutrition, MRP panels)</div>
+        </div>
+
+        <div class="upload-tray-bar" id="upload-tray-bar" style="display:none; margin: 0.75rem 0;">
+          <button type="button" id="btn-add-more-upload" class="btn btn-secondary btn-sm">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            + Add Another Side Photo
+          </button>
+          <button type="button" id="btn-clear-upload" class="btn btn-outline btn-sm">Clear All</button>
+        </div>
+
+        <div id="upload-preview-list" class="upload-preview-list"></div>
+        <button id="btn-scan-uploaded" class="btn btn-success full-width" disabled>
+          Scan Uploaded Package
+        </button>
+      </div>
+    </section>
+
+    <!-- Right Column: Verification Results -->
+    <section class="panel results-panel">
+      <!-- Loading State Indicator -->
+      <div id="scan-loading" class="scan-loading" style="display:none;">
+        <div class="spinner"></div>
+        <div class="loading-title">Processing Package Compliance</div>
+        <div class="loading-desc">Running auto-orientation, multi-channel thresholding, dot-matrix recognition & Legal Metrology checks...</div>
+      </div>
+
+      <!-- Empty State Indicator -->
+      <div id="results-empty" class="results-empty">
+        <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <h3>Ready for Inspection</h3>
+        <p>Use the live camera, upload package photos, or click <strong>Test with Product 1</strong> to inspect mandatory declarations.</p>
+      </div>
+
+      <!-- Populated Results Container -->
+      <div id="results-container" class="results-container" style="display:none;">
+        <!-- Compliance Summary Card -->
+        <div class="compliance-card" id="compliance-card">
+          <div class="compliance-header">
+            <div>
+              <div class="compliance-badges-row">
+                <span class="compliance-badge" id="compliance-badge">COMPLIANT</span>
+                <span class="product-id-badge" id="product-id-badge">PS-2026-0001</span>
+              </div>
+              <h2 class="compliance-title" id="product-title">Product Compliance Verdict</h2>
+              <div class="compliance-meta" id="compliance-meta">Scan ID: -- | Legal Metrology Rules, 2011 Verified</div>
+            </div>
+            <div class="compliance-score-circle">
+              <span class="score-number" id="compliance-rate">100%</span>
+              <span class="score-label">Compliance</span>
+            </div>
+          </div>
+
+          <div class="compliance-stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Mandatory Declarations</div>
+              <div class="stat-value" id="stat-mandatory">9 / 9 Present</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Optional Declarations</div>
+              <div class="stat-value" id="stat-optional">3 Detected</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Execution Time</div>
+              <div class="stat-value" id="stat-duration">-- s</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Inspection Studio: Side-by-Side / Toggle View -->
+        <div class="inspection-studio">
+          <div class="studio-header">
+            <div class="studio-title-block">
+              <h3>Visual Evidence Studio</h3>
+              <span class="studio-hint">Thin 2px outline bounds | Zero text occlusion</span>
+            </div>
+            
+            <div class="studio-controls">
+              <!-- Source Image Selector Tabs (e.g. Front / Back) -->
+              <div class="image-tabs" id="image-tabs"></div>
+              
+              <!-- View Mode Toggle Buttons -->
+              <div class="view-mode-toggles">
+                <button class="view-mode-btn" data-mode="original">Original</button>
+                <button class="view-mode-btn" data-mode="split">Split</button>
+                <button class="view-mode-btn active" data-mode="highlighted">Highlighted</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Display Stage -->
+          <div class="stage-container" id="stage-container">
+            <div class="stage-frame stage-original" id="frame-original" style="display:none;">
+              <span class="frame-tag">Original Package Image</span>
+              <img id="img-original" src="" alt="Original oriented view" />
+            </div>
+            <div class="stage-frame stage-highlighted" id="frame-highlighted">
+              <span class="frame-tag">Computer Vision Detection (Non-Occluding Outlines)</span>
+              <img id="img-highlighted" src="" alt="Annotated detection view" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Declarations Table Section -->
+        <div class="declarations-section">
+          <div class="declarations-header">
+            <h3>Declarations Breakdown</h3>
+            <div class="declarations-filter">
+              <button class="filter-btn active" data-filter="all">All (12)</button>
+              <button class="filter-btn" data-filter="mandatory">Mandatory (9)</button>
+              <button class="filter-btn" data-filter="optional">Optional (3)</button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="declarations-table">
+              <thead>
+                <tr>
+                  <th>Declaration</th>
+                  <th>Category</th>
+                  <th>Detection</th>
+                  <th>Compliance Status</th>
+                  <th>Extracted Value</th>
+                  <th>Confidence</th>
+                  <th>Audit Reason</th>
+                  <th>Source Panel</th>
+                </tr>
+              </thead>
+              <tbody id="declarations-tbody">
+                <!-- Dynamically populated rows -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Raw JSON / Audit Accordion -->
+        <div class="json-section">
+          <details>
+            <summary>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              View Raw Regulatory JSON Output (Legal Metrology Format)
+            </summary>
+            <pre class="json-block"><code id="raw-json-code"></code></pre>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- History Sidebar Drawer -->
+  <aside id="history-drawer" class="history-drawer">
+    <div class="drawer-header">
+      <h3>Scan History</h3>
+      <button id="btn-close-history" class="btn-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="history-list" class="history-list">
+      <div class="empty-hint">Loading scan records...</div>
+    </div>
+  </aside>
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

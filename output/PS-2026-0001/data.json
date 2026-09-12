@@ -1,11 +1,11 @@
 {
-  "scan_id": "638f4540-e93c-46e1-95f9-7952cc84c880",
-  "product": "product-1",
+  "scan_id": "dbd5e52a-880f-419e-92ed-a9096e316e77",
+  "product": "PS-2026-0001",
   "brand_name": "Nestlé",
-  "scanned_at": "2026-09-12T10:00:19.310201+00:00",
-  "duration_seconds": 15.28,
+  "scanned_at": "2026-09-12T09:13:40.571010+00:00",
+  "duration_seconds": 15.36,
   "images": {
-    "Back.jpeg": {
+    "panel_back.jpeg": {
       "orientation": {
         "selected": "0",
         "degrees_clockwise": 0,
@@ -24,8 +24,8 @@
         "width": 720,
         "height": 1280
       },
-      "highlighted_image": "highlighted_Back.jpeg",
-      "original_image": "original_Back.jpeg",
+      "highlighted_image": "highlighted_panel_back.jpeg",
+      "original_image": "original_panel_back.jpeg",
       "fields": {
         "MFG / PACKING DATE": {
           "field": "MFG / PACKING DATE",
@@ -173,7 +173,7 @@
         }
       }
     },
-    "Front.jpeg": {
+    "panel_front.jpeg": {
       "orientation": {
         "selected": "90_COUNTERCLOCKWISE",
         "degrees_clockwise": 270,
@@ -192,8 +192,8 @@
         "width": 1280,
         "height": 720
       },
-      "highlighted_image": "highlighted_Front.jpeg",
-      "original_image": "original_Front.jpeg",
+      "highlighted_image": "highlighted_panel_front.jpeg",
+      "original_image": "original_panel_front.jpeg",
       "fields": {
         "MRP": {
           "field": "MRP",
@@ -288,7 +288,7 @@
         "region": "top_panel",
         "reason": "date_pattern"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "USE BY / BEST BEFORE": {
       "field": "USE BY / BEST BEFORE",
@@ -307,7 +307,7 @@
         "region": "top_panel",
         "reason": "date_range_pattern"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "INGREDIENTS": {
       "field": "INGREDIENTS",
@@ -326,7 +326,7 @@
         "region": "bottom_panel",
         "reason": "declaration_keyword"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "MANUFACTURER": {
       "field": "MANUFACTURER",
@@ -345,7 +345,7 @@
         "region": "bottom_panel",
         "reason": "declaration_keyword"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "MARKETED BY": {
       "field": "MARKETED BY",
@@ -364,7 +364,7 @@
         "region": "bottom_panel",
         "reason": "declaration_keyword"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "LICENSE": {
       "field": "LICENSE",
@@ -383,7 +383,7 @@
         "region": "bottom_panel",
         "reason": "declaration_keyword"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "LOT / BATCH": {
       "field": "LOT / BATCH",
@@ -402,7 +402,7 @@
         "region": "top_panel",
         "reason": "production_code_near_date"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "COUNTRY OF ORIGIN": {
       "field": "COUNTRY OF ORIGIN",
@@ -421,7 +421,7 @@
         "region": "bottom_panel",
         "reason": "derived_from_manufacturer_address"
       },
-      "source_image": "Back.jpeg"
+      "source_image": "panel_back.jpeg"
     },
     "MRP": {
       "field": "MRP",
@@ -440,7 +440,7 @@
         "region": "full",
         "reason": "declaration_keyword"
       },
-      "source_image": "Front.jpeg"
+      "source_image": "panel_front.jpeg"
     },
     "NET QUANTITY": {
       "field": "NET QUANTITY",
@@ -459,7 +459,7 @@
         "region": "full",
         "reason": "declaration_keyword"
       },
-      "source_image": "Front.jpeg"
+      "source_image": "panel_front.jpeg"
     },
     "CUSTOMER CARE": {
       "field": "CUSTOMER CARE",
@@ -478,7 +478,7 @@
         "region": "bottom_panel",
         "reason": "declaration_keyword"
       },
-      "source_image": "Front.jpeg"
+      "source_image": "panel_front.jpeg"
     },
     "MULTI UNIT PACKAGE": {
       "field": "MULTI UNIT PACKAGE",
@@ -497,26 +497,20 @@
         "region": "top_panel",
         "reason": "declaration_keyword"
       },
-      "source_image": "Front.jpeg"
+      "source_image": "panel_front.jpeg"
     }
   },
   "missing_fields": [],
   "compliance": {
-    "overall_status": "REVIEW",
-    "compliance_rate_percent": 88.89,
-    "mandatory_fields_present": 8,
+    "overall_status": "COMPLIANT",
+    "compliance_rate_percent": 100.0,
+    "mandatory_fields_present": 9,
     "mandatory_fields_total": 9,
-    "mandatory_fields_compliant": 8,
-    "mandatory_fields_review": 1,
     "missing_mandatory_fields": [],
-    "uncertain_mandatory_fields": [
-      "NET QUANTITY"
-    ],
     "field_breakdown": {
       "COUNTRY OF ORIGIN": {
         "field": "COUNTRY OF ORIGIN",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "India",
         "confidence": 49.71,
@@ -526,15 +520,12 @@
           "x2": 480,
           "y2": 1014
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 49.7% OCR confidence",
-        "text": "iby NESTLE INDIA TO, Plot No, 2424 & 2570, Usgan, Goa - AO |"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       },
       "CUSTOMER CARE": {
         "field": "CUSTOMER CARE",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "1800 103 1947",
         "confidence": 44.06,
@@ -544,15 +535,12 @@
           "x2": 900,
           "y2": 371
         },
-        "source_image": "Front.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 44.1% OCR confidence",
-        "text": "| oe gg Ft Over Ree To mat = “Saul re = “48 1800103 1947 paar WFD-USEBY-Lot ip"
+        "source_image": "panel_front.jpeg",
+        "needs_review": false
       },
       "INGREDIENTS": {
         "field": "INGREDIENTS",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": false,
         "value": "teat g Emulsfi (Soy Lectin Yeas, Raising agent",
         "confidence": 52.08,
@@ -562,15 +550,12 @@
           "x2": 173,
           "y2": 846
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 52.1% OCR confidence",
-        "text": "+ AAEe INGREDIENTS teat g Emulsfi (Soy Lectin Yeas, Raising agent"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       },
       "LICENSE": {
         "field": "LICENSE",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": false,
         "value": "2028000202",
         "confidence": 34.0,
@@ -580,15 +565,12 @@
           "x2": 204,
           "y2": 1035
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 34.0% OCR confidence",
-        "text": "Lie We oor 2028000202 weet"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       },
       "LOT / BATCH": {
         "field": "LOT / BATCH",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "6153045481",
         "confidence": 57.42,
@@ -598,15 +580,12 @@
           "x2": 411,
           "y2": 573
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 57.4% OCR confidence",
-        "text": "6153045481 SGaze | 5153045481. (Gane: | 6155045481 6155045481"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       },
       "MANUFACTURER": {
         "field": "MANUFACTURER",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "iby NESTLE INDIA TO, Plot No, 2424 & 2570, Usgan, Goa - AO",
         "confidence": 49.71,
@@ -616,15 +595,12 @@
           "x2": 480,
           "y2": 1014
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 49.7% OCR confidence",
-        "text": "iby NESTLE INDIA TO, Plot No, 2424 & 2570, Usgan, Goa - AO |"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       },
       "MARKETED BY": {
         "field": "MARKETED BY",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "He omESTLE MOUALTD, 1M, WORLD TRADE CENTRE GARAHAMBALASE 5 eet",
         "confidence": 32.6,
@@ -634,15 +610,12 @@
           "x2": 632,
           "y2": 979
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 32.6% OCR confidence",
-        "text": "He omESTLE MOUALTD, 1M, WORLD TRADE CENTRE GARAHAMBALASE 5 eet:"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       },
       "MFG / PACKING DATE": {
         "field": "MFG / PACKING DATE",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "JUN/26",
         "confidence": 70.5,
@@ -652,15 +625,12 @@
           "x2": 525,
           "y2": 526
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 70.5% OCR confidence",
-        "text": "JUNI26 - FEBI27 4"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       },
       "MRP": {
         "field": "MRP",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "₹420.00",
         "confidence": 59.6,
@@ -670,15 +640,12 @@
           "x2": 489,
           "y2": 534
         },
-        "source_image": "Front.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 59.6% OCR confidence",
-        "text": "MRP ¢ 420.00 (incl. of"
+        "source_image": "panel_front.jpeg",
+        "needs_review": false
       },
       "MULTI UNIT PACKAGE": {
         "field": "MULTI UNIT PACKAGE",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": false,
         "value": "Multi-unit (42 serves)",
         "confidence": 66.17,
@@ -688,15 +655,12 @@
           "x2": 916,
           "y2": 419
         },
-        "source_image": "Front.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 66.2% OCR confidence",
-        "text": "{senve= 12g, Pack contains 42 serves,"
+        "source_image": "panel_front.jpeg",
+        "needs_review": false
       },
       "NET QUANTITY": {
         "field": "NET QUANTITY",
-        "status": "REVIEW",
-        "detection_status": "REVIEW",
+        "status": "COMPLIANT",
         "mandatory": true,
         "value": "508.2 g",
         "confidence": 15.78,
@@ -706,15 +670,12 @@
           "x2": 820,
           "y2": 548
         },
-        "source_image": "Front.jpeg",
-        "needs_review": true,
-        "reason": "Low OCR confidence (15.8% < 30.0%) - extracted value '508.2 g' requires visual confirmation",
-        "text": "vey NET QUANTITY: «= S082 QQUNITS (19g + \"02"
+        "source_image": "panel_front.jpeg",
+        "needs_review": true
       },
       "USE BY / BEST BEFORE": {
         "field": "USE BY / BEST BEFORE",
         "status": "COMPLIANT",
-        "detection_status": "DETECTED",
         "mandatory": true,
         "value": "FEB/27",
         "confidence": 70.5,
@@ -724,10 +685,8 @@
           "x2": 525,
           "y2": 526
         },
-        "source_image": "Back.jpeg",
-        "needs_review": false,
-        "reason": "Verified with 70.5% OCR confidence",
-        "text": "JUNI26 - FEBI27 4"
+        "source_image": "panel_back.jpeg",
+        "needs_review": false
       }
     }
   }
